@@ -10,6 +10,7 @@ from schnetpack.data import BaseAtomsData
 __all__ = [
     "StratifiedSampler",
     "uniform_weights",
+    "tip_heights"
 ]
 
 
@@ -21,6 +22,16 @@ def uniform_weights(self) -> list:
     values = []
     for spl_idx in range(len(self.dataset)):
         values.append(spl_idx)
+    return values
+
+
+def tip_heights(dataset: BaseAtomsData) -> list:
+    at_idx = 114
+
+    values = []
+    for spl_idx in range(len(dataset)):
+        data = dataset[spl_idx]
+        values.append(data[properties.R][at_idx, 2])
     return values
 
 
