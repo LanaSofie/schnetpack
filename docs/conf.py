@@ -44,6 +44,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.autosectionlabel",
     "nbsphinx",
+    "autoapi.extension",
 ]
 
 autodoc_mock_imports = ["torch", "pytorch_lightning", "torchmetrics"]
